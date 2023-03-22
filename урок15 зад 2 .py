@@ -2,12 +2,20 @@ class Transport(object):
     name = 'Renaul Logan'
     max_speed = 180
     mileage = 12
-    def __init__(self, name, max_speed, mileage):
-        self.name = name
-        self.max_speed = max_speed
-        self.mileage = mileage
 
-    def seating_capacity(self, capacity):
-        return (f"Вместимость одного автобуса {self.name} {capacity} пассажиров")
-Autobus = Transport('Renaul Logan',180,12)
-print(Autobus.seating_capacity(50))
+    def __init__(self, n, mx, mil):
+        self.name = n
+        self.max_speed = mx
+        self.mileage = mil
+
+
+class Autobus(Transport):
+    capacity = 50
+
+    def seating_capacity(self):
+        return f"Вместимость одного автобуса {self.name} {Autobus.capacity} пассажиров"
+
+
+Renal = Autobus('Renaul Logan', 180, 12)
+print(Renal.seating_capacity())
+
